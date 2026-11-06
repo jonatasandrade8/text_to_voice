@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎙️ Texto para Voz com Gravação</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎙️ Texto para Voz</h1>
+      <p class="subtitle">Digite, configure a voz e grave para dublagens e leituras</p>
+    </header>
+
+    <main>
+      <section class="panel">
+        <label for="texto">Texto para narração:</label>
+        <textarea id="texto" placeholder="Digite aqui o texto que será falado...">Olá! Esta é uma demonstração da aplicação de texto para voz. Você pode escolher a voz, o tom, a velocidade e gravar o áudio resultante.</textarea>
+        <div class="char-count"><span id="charCount">0</span> caracteres</div>
+      </section>
+
+      <section class="panel controls">
+        <h2>⚙️ Configurações</h2>
+
+        <div class="grid">
+          <div class="field">
+            <label for="voz">Voz / Gênero:</label>
+            <select id="voz"></select>
+          </div>
+
+          <div class="field">
+            <label for="tom">Tom (pitch): <span id="tomVal">1.0</span></label>
+            <input type="range" id="tom" min="0.5" max="2" step="0.1" value="1" />
+            <div class="range-labels"><span>Grave</span><span>Agudo</span></div>
+          </div>
+
+          <div class="field">
+            <label for="velocidade">Velocidade: <span id="velVal">1.0</span>x</label>
+            <input type="range" id="velocidade" min="0.5" max="2" step="0.1" value="1" />
+            <div class="range-labels"><span>Lento</span><span>Rápido</span></div>
+          </div>
+
+          <div class="field">
+            <label for="volume">Volume: <span id="volVal">1.0</span></label>
+            <input type="range" id="volume" min="0" max="1" step="0.1" value="1" />
+            <div class="range-labels"><span>Baixo</span><span>Alto</span></div>
+          </div>
+
+          <div class="field">
+            <label for="preset">Presets (tipos variados):</label>
+            <select id="preset">
+              <option value="">— Escolher preset —</option>
+              <option value="narrador">📖 Narrador</option>
+              <option value="animado">😄 Animado</option>
+              <option value="serio">🎭 Sério / Drama</option>
+              <option value="sussurro">🤫 Sussurro</option>
+              <option value="noticia">📺 Locutor de Notícias</option>
+              <option value="infantil">🧒 Infantil</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel actions">
+        <div class="buttons">
+          <button id="btnFalar" class="btn primary">▶️ Falar</button>
+          <button id="btnPausar" class="btn" disabled>⏸️ Pausar</button>
+          <button id="btnParar" class="btn" disabled>⏹️ Parar</button>
+          <button id="btnGravar" class="btn record">🔴 Gravar</button>
+        </div>
+
+        <div id="status" class="status">Pronto.</div>
+
+        <div id="gravacao" class="recording hidden">
+          <h3>🎧 Áudio gravado</h3>
+          <audio id="audioPlayback" controls></audio>
+          <a id="downloadLink" class="btn download" download="narracao.webm">⬇️ Baixar áudio</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>⚠️ Para gravar com áudio, selecione <strong>"Compartilhar áudio da aba"</strong> quando solicitado. Funciona melhor no Chrome/Edge.</p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

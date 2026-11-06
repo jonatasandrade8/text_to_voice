@@ -1,0 +1,259 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: linear-gradient(135deg, #1e1e2f 0%, #2d2d44 100%);
+  color: #eaeaea;
+  min-height: 100vh;
+  padding: 20px;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  background: linear-gradient(90deg, #7f5af0, #2cb67d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  color: #a0a0b8;
+  margin-top: 8px;
+}
+
+.panel {
+  background: #2a2a3d;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #c7c7d9;
+  font-size: 0.95rem;
+}
+
+textarea {
+  width: 100%;
+  min-height: 140px;
+  padding: 14px;
+  border-radius: 8px;
+  border: 2px solid #3d3d5c;
+  background: #1e1e2f;
+  color: #eaeaea;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.2s;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #7f5af0;
+}
+
+.char-count {
+  text-align: right;
+  color: #888;
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+.controls h2 {
+  margin-bottom: 16px;
+  font-size: 1.2rem;
+  color: #7f5af0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
+}
+
+.field select,
+.field input[type="range"] {
+  width: 100%;
+}
+
+select {
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #3d3d5c;
+  background: #1e1e2f;
+  color: #eaeaea;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+  border-color: #7f5af0;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 8px;
+  background: #3d3d5c;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 6px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #7f5af0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  background: #9d7aff;
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #7f5af0;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #888;
+  margin-top: 4px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.btn {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: #3d3d5c;
+  color: #eaeaea;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn.primary {
+  background: #7f5af0;
+}
+
+.btn.primary:hover:not(:disabled) {
+  background: #9d7aff;
+}
+
+.btn.record {
+  background: #dc2626;
+}
+
+.btn.record.gravando {
+  background: #ef4444;
+  animation: pulse 1s infinite;
+}
+
+.btn.download {
+  background: #2cb67d;
+  margin-top: 12px;
+}
+
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  50% { box-shadow: 0 0 0 12px rgba(239, 68, 68, 0); }
+}
+
+.status {
+  padding: 10px 14px;
+  background: #1e1e2f;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #a0a0b8;
+  border-left: 4px solid #7f5af0;
+}
+
+.recording {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #3d3d5c;
+}
+
+.recording h3 {
+  margin-bottom: 12px;
+  color: #2cb67d;
+}
+
+.recording audio {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  color: #888;
+  font-size: 0.85rem;
+  margin-top: 20px;
+  padding: 16px;
+}
+
+footer strong {
+  color: #7f5af0;
+}
+
+@media (max-width: 600px) {
+  h1 { font-size: 1.6rem; }
+  .buttons { flex-direction: column; }
+  .btn { width: 100%; }
+}
